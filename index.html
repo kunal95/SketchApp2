@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="jquery-1.10.2.min.js"></script>
+    <script src="min.js"></script>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="choose">
+        <div class="btn" id="red"></div>
+        <div class="btn" id="yellow"></div>
+        <div class="btn" id="green"></div>
+        <div class="btn" id="cyan"></div>
+        <div class="btn" id="blue"></div>
+        <div class="btn" id="pink"></div>
+        <div class="btn" id="black"></div>
+        <div class="btn" id="white"></div>
+    </div>
+    <div id="size">
+        <div class="btn" id="plus" style="border-right:1px solid grey inset">+</div>
+        <div class="btn" id="minus">—</div>
+    </div>
+    <canvas id="simple_sketch" width="2000" height="1800"></canvas>
+    <script type="text/javascript">
+        $(function () {
+            $('#simple_sketch').sketch();
+            var size = 5;
+            $("#red").click(function () { $('#simple_sketch').sketch('color', 'red'); });
+            $("#yellow").click(function () { $('#simple_sketch').sketch('color', 'yellow'); });
+            $("#green").click(function () { $('#simple_sketch').sketch('color', 'green'); });
+            $("#cyan").click(function () { $('#simple_sketch').sketch('color', 'cyan'); });
+            $("#blue").click(function () { $('#simple_sketch').sketch('color', 'blue'); });
+            $("#pink").click(function () { $('#simple_sketch').sketch('color', 'pink'); });
+            $("#black").click(function () { $('#simple_sketch').sketch('color', 'black'); });
+            $("#white").click(function () { $('#simple_sketch').sketch('color', 'white'); });
+            $("#plus").click(function () { size = size + 1; $('#simple_sketch').sketch('size', size); });
+            $("#minus").click(function () { size = size - 1; $('#simple_sketch').sketch('size', size); });
+        });
+    </script>
+</body>
+</html>
